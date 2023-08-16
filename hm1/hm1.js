@@ -64,12 +64,9 @@ console.log(typeof c)
 
 let name = prompt('You Name')
 
-console.log(name)
-
 let secondName = prompt('Your last Name')
-
-console.log(secondName)
 
 let age = prompt('How old are you')
 
-console.log(age)
+let fullFIO = `${name} ${secondName} ${+age}`
+console.log(fullFIO)
