@@ -66,7 +66,9 @@ let name = prompt('You Name')
 
 let secondName = prompt('Your last Name')
 
-let age = prompt('How old are you')
+let age = +prompt('How old are you')
 
-let fullFIO = `${name} ${secondName} ${+age}`
+console.log(age)
+let fullFIO = `${name} ${secondName} ${age}`
+
 console.log(fullFIO)
