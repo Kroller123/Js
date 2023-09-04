@@ -58,11 +58,11 @@ let listOfItems = ['html', 'css', 'javascript', 'mysql', 'mongodb', 'react', 'an
 //         -->
 //     </ul>
 
-
+document.write(`<ul>`)
 for (let i = 0; i < listOfItems.length; i++) {
-    document.write(`<ul><li style="font-size: 30px;">${listOfItems[i]}</li></ul>`)
+    document.write(`<li style="font-size: 30px;">${listOfItems[i]}</li>`)
 }
-
+document.write(`</ul>`)
 
 document.write(`<div>-------------------------------------------5-----------------------------------------------------------------</div>`)
 

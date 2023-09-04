@@ -68,7 +68,6 @@ for (let i = 0; i < users.length; i++) {
 */
 
 
-
 console.log(users[0]["password"])
 console.log(users[1]["password"])
 console.log(users[2]["password"])
