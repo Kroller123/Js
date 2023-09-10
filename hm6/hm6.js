@@ -381,7 +381,7 @@ console.log('------------------17----------------')
 // --написати пошук всіх об'єктів, в який в modules є sass
 // --написати пошук всіх об'єктів, в який в modules є docker
 
-function findAllObject(arr) {
+let findAllObject = (arr)  => {
     for (let i = 0; i < arr.length; i++) {
         for (let element of arr[i]['modules']) {
             if (element === 'sass') {
