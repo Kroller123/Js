@@ -12,7 +12,12 @@
     let userJson  = url.searchParams.get('value')
     let user = JSON.parse(userJson)
 
-    console.log(user)
+
+    for (let key in user) {
+        let div = document.createElement('div')
+        div.innerText = `${key} --- ${user[key]}`
+        document.body.append(div)
+    }
 
 </script>
 </body>
