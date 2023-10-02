@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>users</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        #main {
+            display: flex;
+            flex-direction: row;
+            height: 100vh;
+            background-color: #2d2b2b;
+        }
+
+        #firs {
+            width: 50vw;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #firs > div {
+            display: flex;
+            width: 25vw;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(133, 185, 139);
+            font-size: 30px;
+            margin-top: 30px;
+            border: 5px solid black;
+        }
+
+        #firs > div > a {
+            text-decoration: none;
+        }
+
+        #second {
+            width: 50vw;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #second > div {
+            display: flex;
+            width: 25vw;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #418149;
+            font-size: 30px;
+            margin-top: 30px;
+            border: 5px solid black;
+        }
+
+        #second > div > a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<div id="main">
+    <div id="firs"></div>
+    <div id="second"></div>
+</div>
+<script>
+    let firstDiv = document.querySelector('#firs')
+    let secondDiv = document.querySelector('#second')
+    fetch("https://jsonplaceholder.typicode.com/users")
+        .then(res => res.json())
+        .then(products => {
+            for (let i of products) {
+                if (i.id % 2 !== 0) {
+
+                    let div = document.createElement('div')
+                    let a = document.createElement('a')
+                    let p = document.createElement('p')
+
+                    p.classList.add('name')
+
+                    p.innerText = `${i.id} --- ${i.name}`
+
+                    a.innerText = `Details of user`
+                    a.href = `user-details.html?value=${JSON.stringify(i)}`
+
+                    div.append(p, a)
+                    firstDiv.append(div)
+                } else {
+                    let div = document.createElement('div')
+                    let a = document.createElement('a')
+                    let p = document.createElement('p')
+
+                    p.classList.add('name')
+
+                    p.innerText = `${i.id} --- ${i.name}`
+
+                    a.innerText = `Details of user`
+                    a.href = `user-details.html?value=${JSON.stringify(i)}`
+
+                    div.append(p, a)
+                    secondDiv.append(div)
+                }
+            }
+        })
+</script>
+</body>
+</html>
